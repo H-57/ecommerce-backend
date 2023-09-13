@@ -1,5 +1,4 @@
-{
-  "products": [
+[
     {
       "id": 1,
       "title": "iPhone 9",
@@ -1839,8 +1838,5 @@
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ]
     }
-  ],
-  "user": {
-    "name": "hello2"
-  }
-}
+  ]
+ 
