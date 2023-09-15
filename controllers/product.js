@@ -6,8 +6,8 @@ const allProducts=async(req,res)=>{
     let query=Product.find({})//get all products from database
 
     //for sort products data
-  if(req.query.sort&&req.query.order){
-    query=query.sort({[req.query.sort]:req.query.order})
+  if(req.query._sort&&req.query._order){
+    query=query.sort({[req.query._sort]:req.query._order})
   }
 // for brands filters 
 if(req.query.brand){
@@ -26,6 +26,17 @@ res.json(result)
 
 }
 
+const detailProduct=async(req,res)=>{
+const id= req.params.id
+
+try {
+    const response=await Product.findById(id)
+res.json(response)
+} catch (error) {
+    res.status(400).json(error)
+}
+}
+
 // create a new product
 const setProduct=async(req,res)=>{
 const body=req.body
@@ -41,4 +52,4 @@ res.json(result)
 
 
 
-module.exports={allProducts,setProduct}
+module.exports={allProducts,setProduct,detailProduct}
