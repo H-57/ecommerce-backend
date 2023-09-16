@@ -6,7 +6,7 @@ const{allProducts,setProduct,detailProduct}=require('../controllers/product')
 router.get("/",allProducts)
 router.get("/:id",detailProduct)
 router.post("/",setProduct)
-
+ 
 
 
 
