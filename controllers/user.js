@@ -22,7 +22,7 @@ const handelUserSignup=async (req,res)=>{
         const tocken= setUser(userData)
            
            
-        res.json({message:"account created success",status:"success",token:tocken})
+        res.json({message:"account created success",status:"success",token:tocken,name,email})
       
     } catch (error) {
         res.status(400).send(error.message)
