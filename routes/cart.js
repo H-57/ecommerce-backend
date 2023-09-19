@@ -1,13 +1,14 @@
 const express = require('express');
 const router=express.Router()
-const {getCart,setCart}= require("../controllers/cart")
+const {getCart,setCart,deleteFromCart,updateCart}= require("../controllers/cart")
 
 
 
-router.get("/:id",getCart)
-router.post("/",setCart)
-// router.patch("/:id")
-// router.delete("/:id")
+router.get("/",getCart)
+.post("/",setCart)
+.delete('/:id', deleteFromCart)
+.patch('/:id', updateCart)
+
 
 
 

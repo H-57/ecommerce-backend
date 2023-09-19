@@ -24,8 +24,10 @@ app.use(express.json())
 dbConnection()
 const port = process.env.PORT||3000
 
-
-app.get('/', (req, res) => res.send("working"))
+const {getUser}=require('./service/auth')
+app.get('/check/:token', async(req, res) => {
+    const id= await getUser(req.params.token)._id
+    res.json({"status":"working",id})})
 
 
 app.use("/products",productRoutes)
